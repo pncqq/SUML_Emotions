@@ -1,4 +1,6 @@
 import pandas as pd
+import streamlit as st
+import numpy as np
 
 # Przygotowanie danych
 splits_1 = {'train': 'train.csv', 'validation': 'dev.csv', 'test': 'test.csv'}
@@ -13,10 +15,25 @@ df_2.drop(columns=['label'], inplace=True)
 df_1.rename(columns={'situation': 'text'}, inplace=True)
 df_2.rename(columns={'label_text': 'emotion'}, inplace=True)
 
-print(df_1.columns)
-print(df_2.columns)
+st.write(df_1.columns)
+st.write(df_2.columns)
 
 combined_df = pd.concat([df_1, df_2])
 
 # Sprawdzenie połączonych
-print(combined_df.head())
+st.write(combined_df.head())
+chart_data = pd.DataFrame({
+    'x': [1, 2, 3, 4],
+    'y': [10, 20, 30, 40]
+})
+user_input = st.text_input('Enter a text to recognize emotion')
+st.write(user_input)
+
+if user_input:
+    st.session_state['show_chart'] = st.session_state.get('show_chart', True)
+
+if st.session_state.get('show_chart'):
+    st.bar_chart(chart_data)
+
+
+
