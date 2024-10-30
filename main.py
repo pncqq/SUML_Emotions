@@ -14,7 +14,7 @@ chart_data = pd.DataFrame(
 st.title("Emotion detection app")
 user_input = st.text_input('Enter a text to recognize emotion')
 
-# TODO: Get result from model
+# TODO: {pncqq} Get result from model
 # result = data_model.get_result(user_input)
 # chart_data = pd.DataFrame({<result>})
 
