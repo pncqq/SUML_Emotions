@@ -1,8 +1,12 @@
 import streamlit as st
-
+import data_model
+import pandas as pd
 
 # Sprawdzenie połączonych
-st.write(combined_df.head())
+st.write(data_model.df_1.columns)
+st.write(data_model.df_2.columns)
+
+st.write(data_model.combined_df.head())
 chart_data = pd.DataFrame({
     'x': [1, 2, 3, 4],
     'y': [10, 20, 30, 40]
@@ -15,9 +19,5 @@ if user_input:
 else:
     st.session_state['show_chart'] = False
 
-
 if st.session_state.get('show_chart'):
     st.bar_chart(chart_data)
-
-
-

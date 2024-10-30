@@ -14,7 +14,4 @@ df_2.drop(columns=['label'], inplace=True)
 df_1.rename(columns={'situation': 'text'}, inplace=True)
 df_2.rename(columns={'label_text': 'emotion'}, inplace=True)
 
-st.write(df_1.columns)
-st.write(df_2.columns)
-
 combined_df = pd.concat([df_1, df_2])
