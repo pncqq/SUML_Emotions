@@ -1,7 +1,6 @@
 import numpy as np
 import streamlit as st
 from streamlit import columns
-import data_model
 import pandas as pd
 
 #data placeholder
