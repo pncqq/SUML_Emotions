@@ -1,10 +1,21 @@
-import numpy as np
-import streamlit as st
-from streamlit import columns
+import os
 import pandas as pd
+import requests
+import streamlit as st
 from autogluon.multimodal import MultiModalPredictor
 
-model = MultiModalPredictor.load('AutogluonModels/ag-20241112_165247/model.ckpt')
+url = 'https://huggingface.co/pncqq/ag_emotion_predictor/blob/main/ag-20241112_165247/model.ckpt'
+local_path = "AutogluonModels/ag-20241112_165247/model.ckpt"
+
+if not os.path.exists(local_path):
+    print("Downloading model...")
+    r = requests.get(url, stream=True)
+    with open(local_path, "wb") as f:
+        for chunk in r.iter_content(chunk_size=8192):
+            f.write(chunk)
+    print("Download complete.")
+
+model = MultiModalPredictor.load(local_path)
 
 st.title("Emotion detection app")
 user_input = st.text_input('Enter a text to recognize emotion')
