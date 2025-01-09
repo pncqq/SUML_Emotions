@@ -4,10 +4,11 @@ import requests
 import streamlit as st
 from autogluon.multimodal import MultiModalPredictor
 
-url = 'https://huggingface.co/pncqq/ag_emotion_predictor/blob/main/ag-20241112_165247/model.ckpt'
+url = 'https://huggingface.co/pncqq/ag_emotion_predictor/raw/main/ag-20241112_165247/model.ckpt'
 local_path = "AutogluonModels/ag-20241112_165247/model.ckpt"
 
 if not os.path.exists(local_path):
+    os.makedirs(os.path.dirname(local_path), exist_ok=True)
     print("Downloading model...")
     r = requests.get(url, stream=True)
     with open(local_path, "wb") as f:
@@ -33,4 +34,3 @@ if st.session_state.get('input_received'):
         st.write("Prediction: ", prediction.iloc[0].upper())
     
 
-    
