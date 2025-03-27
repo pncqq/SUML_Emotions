@@ -1,27 +1,69 @@
-Group 11c Team No. 2
+# 😍 SUML_Emotions
 
-# Analiza emocji z wykorzystaniem technik machine learning
+Aplikacja do analizy emocji w tekstach z wykorzystaniem uczenia maszynowego i AutoML. Projekt zrealizowany zespołowo w ramach kursu SUML.
 
-### Link do aplikacji:
+## 📂 Zawartość repozytorium
 
-https://detectheremotion.streamlit.app/
+- `main.py` – główny plik uruchamiający aplikację (Streamlit)
+- `data_model.ipynb` – eksploracja danych i trenowanie modelu
+- `requirements.txt` – zależności do uruchomienia projektu
+- `README.md` – dokumentacja
 
-### Prezentacja:
+## 🚀 Link do aplikacji (demo)
 
-https://www.canva.com/design/DAGcNDVl7CM/5gKAiGyLd9bWgqjO42xlYQ/edit
+👉 [https://detectheremotion.streamlit.app](https://detectheremotion.streamlit.app)
 
-### Opis
-Celem projektu jest stworzenie aplikacji w środowisku AutoML pozwalającej użytkownikowi na 
-skorzystanie z przygotowanego na potrzeby pracy modelu sztucznej inteligencji do przewidywania 
-emocjizawartych w tekście.Do realizacji celu wykorzystaliśmy bazędanych udostępnionąna 
-Huggingface.co zawierającą wiadomości z historii czatów internetowych. W bazie zapisane jestjakie 
-emocje wywołały w osobach sytuacje, w których się znalazły i jak je opisały, co wykorzystaliśmy w 
-procesie trenowania modelu. Projektmoże być wykorzystany indywidualnie lub wspierać inne 
-oprogramowanie oraz ma możliwość rozwoju w przyszłości. Przykładem wykorzystania jest na 
-przykład: aplikacja pomagająca osobom ze spektrum w komunikacji, Internetowy psycholog, 
-wsparcie systemu ChatBotów na stronach internetowych. 
+## 📈 Zbiory danych
 
+1. Empathetic Dialogues v2 (Hugging Face):  
+   https://huggingface.co/datasets/Adapting/empathetic_dialogues_v2
 
-Dataset1: https://huggingface.co/datasets/Adapting/empathetic_dialogues_v2
+2. SetFit Emotion Dataset:  
+   https://huggingface.co/datasets/SetFit/emotion
 
-Dataset2: https://huggingface.co/datasets/SetFit/emotion
+## ⚙️ Technologie
+
+- Python 3.x
+- Streamlit
+- scikit-learn
+- AutoML (AutoGluon / TPOT – zależnie od wersji)
+- Jupyter Notebook
+
+## 🧠 Funkcjonalności aplikacji
+
+- Wprowadzanie tekstu przez użytkownika
+- Predykcja emocji (np. joy, sadness, anger, etc.)
+- Możliwość rozszerzenia na chatboty, wsparcie emocjonalne lub psychologiczne
+
+## 📅 Cel projektu
+
+Celem projektu było stworzenie narzędzia wykorzystującego modele ML do rozpoznawania emocji w komunikatach tekstowych. Potencjalne zastosowania to:
+- pomoc dla osób neuroatypowych w interpretacji emocji
+- wsparcie chatbotów w lepszym dopasowaniu odpowiedzi
+- aplikacje psychologiczne lub terapeutyczne
+
+## ▶️ Jak uruchomić lokalnie
+
+1. Sklonuj repo:
+```bash
+git clone https://github.com/pncqq/SUML_Emotions.git
+cd SUML_Emotions
+```
+
+2. Zainstaluj zależności:
+```bash
+pip install -r requirements.txt
+```
+
+3. Uruchom aplikację Streamlit:
+```bash
+streamlit run main.py
+```
+
+## 👨‍💼 Zespół i autorstwo
+
+- Filip Michalski – kod aplikacji, trenowanie modelu
+- Filip Chrzanowski – deploy aplikacji, streamlit
+- Szymon Kaliński – dokumentacja, prezentacja, oprawa graficzna
+
+Projekt wykonany w ramach kursu **SUML – Systemy Uczące się Maszynowo**.
